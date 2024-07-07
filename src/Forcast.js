@@ -7,10 +7,9 @@ const Forcast = (props) => {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
   const [error, setError] = useState("");
-
   const defaults = {
     color: "white",
-    size: 112,
+    size: 90,
     animate: true,
   };
 

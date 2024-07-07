@@ -55,6 +55,25 @@ function CurrentLiveLocation() {
   const [lon, setLon] = useState();
   const [humidity, setHumidity] = useState();
 
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
   
   useEffect(()=>{
     const getPosition = (options)=>{
@@ -145,6 +164,7 @@ function CurrentLiveLocation() {
           <h2>{city}</h2>
           <h3>{country}</h3>
         </div>
+        {windowSize.width > 482 && windowSize.height > 699 && (
         <div className="mb-icon">
           <ReactAnimatedWeather
           icon={icon}
@@ -154,7 +174,7 @@ function CurrentLiveLocation() {
            />
           <p>{main}</p>
         </div>
-
+        )}
         <div className="date-time">
           <div className="dmy">
             <div className="txt"></div>
