@@ -1,173 +1,10 @@
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-dl,
-dt,
-dd,
-ol,
-nav ul,
-nav li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+*{
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-ol,
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  box-sizing: border-box;
 }
 /* start editing from here */
-a {
-  text-decoration: none;
-}
-.txt-rt {
-  text-align: right;
-} /* text align right */
-.txt-lt {
-  text-align: left;
-} /* text align left */
-.txt-center {
-  text-align: center;
-} /* text align center */
-.float-rt {
-  float: right;
-} /* float right */
-.float-lt {
-  float: left;
-} /* float left */
-.clear {
-  clear: both;
-} /* clear float */
-.pos-relative {
-  position: relative;
-} /* Position Relative */
-.pos-absolute {
-  position: absolute;
-} /* Position Absolute */
-.vertical-base {
-  vertical-align: baseline;
-} /* vertical align baseline */
-.vertical-top {
-  vertical-align: top;
-} /* vertical align top */
-.underline {
-  padding-bottom: 5px;
-  border-bottom: 1px solid #eee;
-  margin: 0 0 20px 0;
-} /* Add 5px bottom padding and a underline */
-nav.vertical ul li {
-  display: block;
-} /* vertical menu */
-nav.horizontal ul li {
-  display: inline-block;
-} /* horizontal menu */
-img {
-  max-width: 100%;
-}
+
 .current-time {
   font-size: 35px;
   font-weight: 100;
@@ -273,6 +110,7 @@ h1 {
   width: 90%;
   padding: 0 30px 10px 30px;
   font-family: "Oxygen", sans-serif;
+  display: flex;
 }
 
 div#txt {
@@ -293,7 +131,8 @@ div#txt {
   width: 60%;
   float: right;
   position: relative;
-  left: 10px;
+  left: 230px;
+  bottom: 10px;
 }
 
 .temperature p {
@@ -301,6 +140,7 @@ div#txt {
   font-size: 80px;
   font-weight: 100;
   margin: 0 40px;
+  left: 80px;
 }
 
 .temperature p span {
@@ -319,6 +159,7 @@ div#txt {
 
 .forecast-icon {
   padding: 25px 0;
+  margin-bottom: -20px;
   /* background: white; */
 }
 
@@ -422,6 +263,11 @@ div#txt {
   .dmy {
     padding-top: 25px;
   }
+  .temperature  {
+    /* padding-bottom: 10px */
+    top: -120px;
+    left: 40px;
+  }
 }
 
 @media screen and (max-width: 736px) {
@@ -463,8 +309,11 @@ div#txt {
   .dmy {
     padding-top: 17px;
   }
-  .temperature p {
-    padding-bottom: 10px;
+  
+  .temperature  {
+    /* padding-bottom: 10px */
+    top: -120px;
+    left: 40px;
   }
 }
 
@@ -476,12 +325,17 @@ div#txt {
     width: 100%;
     min-height: 300px;
   }
+  .city .title{
+    margin-right: 20px;
+  }
   .temperature {
     text-align: right;
     margin-right: 25px;
+    margin-top: 30px;
   }
   .temperature p {
-    font-size: 100px;
+    font-size: 60px;
+    
   }
   .dmy {
     padding-top: 35px;
@@ -520,6 +374,11 @@ div#txt {
   }
   .forecast-icon {
     margin: 40px 0 10px;
+
+  }
+ 
+  .mb-icon p{
+    margin-top: 320px;
   }
   .forecast-icon img {
     width: 100px;
@@ -594,23 +453,41 @@ div#txt {
 
 @media screen and (max-width: 375px) {
   h1 {
-    font-size: 26px;
+    font-size: 21px;
     line-height: 1.5em;
     letter-spacing: 0;
   }
   .city {
     min-height: 315px;
   }
+  .city h1{
+    margin-bottom: 10px;
+  }
   .dmy {
     margin-bottom: 30px;
   }
-  .date {
+  .date-time{
+    display: flex;
+    flex-direction: column;
+  }
+  .date-time .temperature{
+    top: -60px;
+    left: 10px;
+  }
+ .date-time .dmy{
+     top: 60px;
+ }
+ .date-time .dmy .current-time{
+  font-size: 18px;
+ }
+ .date {
     font-size: 18px;
   }
-  .temperature p {
-    padding-bottom: 15px;
+  .mb-icon p{
+    display: none;
   }
 }
+
 
 /*-- //Responsive Code --*/
 .cityHead {
